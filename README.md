@@ -8,3 +8,4 @@
 - Классовые и функциональные объекты
 - JSX
 
+Сайт проекта: https://andrewtitarenko.github.io/mesto-react/

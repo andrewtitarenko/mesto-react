@@ -2,7 +2,7 @@ import React from 'react';
 
 function ImagePopup({card, onClose}) {
     return(
-        <div className={Object.keys(card).length !== 0 ? "popup popup_open-image popup_opened" : "popup popup_open-image"} id="popup-pictures" onClick={onClose}>
+        <div className={`popup popup_open-image ${Object.keys(card).length !== 0 && 'popup_opened'}`} id="popup-pictures" onClick={onClose}>
         <div className="popup__overlay"></div>
         <div className="popup__photo-container">
             <img src={card.link} alt={card.name} className="popup__photo"/>
@@ -14,3 +14,5 @@ function ImagePopup({card, onClose}) {
 }
 
 export default ImagePopup;
+
+

@@ -35,15 +35,17 @@ function App() {
       setSelectedCard(card)
     }
 
+
     useEffect(() => {
         const closeEscape = (e) => {(e.key === 'Escape') && closeAllPopups({})}
         return(isAddPlacePopupOpen || isEditAvatarPopupOpen || isEditProfilePopupOpen || selectedCard) 
         ? document.addEventListener('keydown', closeEscape)
         : () => document.removeEventListener('keydown', closeEscape)
-    })
+    }, [isEditAvatarPopupOpen, isEditProfilePopupOpen, isAddPlacePopupOpen, selectedCard])
+
+
 
   return (
-    <>
     <div className="page">
         <Header />
         <Main
@@ -87,21 +89,8 @@ function App() {
         <PopupWithForm  title='Вы уверены?' name='confirm' textButton='Да'></PopupWithForm>
 
         <ImagePopup card={selectedCard} onClose={closeAllPopups} />
-
-
-        {/* <div className="popup popup_confirm">
-            <div className="popup__overlay"></div>
-            <div className="popup__content">
-                <h2 className="popup__title  popup__title_confirm">Вы уверены?</h2>
-                <button className="popup__close-button" aria-label="Close" type="button"></button>
-                <form className="popup__container popup__container_confirm" id="delete" name="form-delete" noValidate>
-                    <button className="popup__button popup__button_confirm" type="submit">Да</button>
-                </form>
-            </div>
-        </div> */}
        <Footer />
     </div>
-    </>
   );
 }
 
