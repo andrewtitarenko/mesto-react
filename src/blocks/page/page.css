@@ -12,22 +12,22 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-  }
-  
-  @media screen and (max-width: 1024px) {
+
+}
+@media screen and (max-width: 1024px) {
     .page {
-      width: 90vw;
+        width: 90vw;
     }
-  }
-  
-  @media screen and (max-width: 425px) {
+}
+
+@media screen and (max-width: 425px) {
     .page {
-      width: 88.12vw;
+        width: 88.12vw;
     }
-  }
-  
-  @media screen and (max-width: 320px) {
+}
+
+@media screen and (max-width: 320px) {
     .page {
-      width: 100%;
+        width: 100%;
     }
-  }
+}

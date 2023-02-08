@@ -1,8 +1,8 @@
 .element__container-like {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     font-weight: 400;
     font-size: 13px;
     line-height: 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;    
 }

@@ -4,7 +4,7 @@
     height: 120px;
     background-size: cover;
     border-radius: 50%;
-    transition: opacity 0.3s linear 0.1s;
+    transition: opacity .3s linear .1s;
     cursor: pointer;
     background-color: #000000;
     text-overflow: ellipsis;
