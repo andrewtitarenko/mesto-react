@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-
 import api from "../utils/api";
 import Main from "./Main";
 import Header from "./Header";
@@ -11,7 +10,6 @@ import AddPlacePopup from "./AddPlacePopup";
 import DeletePopup from "./DeletePopup";
 import { CurrentUserContext } from "../contexts/CurrentUserContext";
 
-
 function App() {
   const [currentUser, setCurrentUser] = useState({});
   const [cards, setCards] = useState([]);
@@ -21,7 +19,6 @@ function App() {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
   const [isAddPlacePopupOpen, setIsAddPlacePopupOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
-
 
   function handlePopupConfirm(card) {
     setIsOpenPopup(true);
@@ -147,7 +144,7 @@ function App() {
       document.addEventListener("keydown", closeEscape);
     }
     return () => document.removeEventListener("keydown", closeEscape);
-  });
+  }, [isAddPlacePopupOpen || isEditAvatarPopupOpen || isEditProfilePopupOpen || selectedCard || card ]);
 
   return (
     <CurrentUserContext.Provider value={currentUser}>
@@ -188,7 +185,6 @@ function App() {
           onDeleteCard={handleCardDelete}
           onClose={closeAllPopups}
         />
-
         <Footer />
       </div>
     </CurrentUserContext.Provider>

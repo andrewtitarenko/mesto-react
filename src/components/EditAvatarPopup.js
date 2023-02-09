@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import PopupWithForm from "./PopupWithForm";
 
 function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
@@ -10,10 +10,14 @@ function EditAvatarPopup({ isOpen, onClose, onUpdateAvatar }) {
     onUpdateAvatar({
       avatar: avatarRef.current.value,
     });
-    avatarRef.current.value = "";
+    //avatarRef.current.value = "";
     setValid(false);
   };
 
+  useEffect(() => {
+    avatarRef.current.value = "";
+  }, [isOpen]);
+  
   const handleInput = (e) => {
     if (!e.target.validity.valid || avatarRef.current.value === "") {
       setValid(false);

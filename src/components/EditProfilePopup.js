@@ -88,7 +88,7 @@ function EditProfilePopup({ isOpen, onClose, onUpdateUser }) {
       <input
         className="popup__input popup__input_type_description"
         id="about"
-        name="description"
+        name="about"
         type="text"
         placeholder="О себе"
         minLength="2"
